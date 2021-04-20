@@ -8,3 +8,8 @@ OpenCv, Colored, PIL
 ```sh
     $ python3 Juliete_me.py -f <foto.*> -o <oculos.* (opcional)>
 ```
+
+https://github.com/thiagodks/Juliete_Me/blob/master/geral_de_juju/eu_de_juju_21:05:16.png
+
+![alt text](
+https://github.com/thiagodks/Juliete_Me/blob/master/geral_de_juju/eu_de_juju_21:05:16.png?raw=true "Saida")
