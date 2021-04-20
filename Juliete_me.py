@@ -25,19 +25,23 @@ if len(face_landmarks_list) == 0:
 new_fotinha = Image.open(file_fotinha)
 
 for detail, points in face_landmarks_list[0].items():
-    if detail == "left_eyebrow":
-        x1_oculos = points[0][0]
-        position = (points[0][0], points[0][1])
-        altura_oculos = min(points, key=lambda x: x[1])[1]
-    if detail == "right_eyebrow":
-        x2_oculos = points[-1][0]
-    if detail == "left_eye":
-        altura_oculos = np.abs(altura_oculos - max(points, key=lambda x: x[1])[1])
 
-juju = juju.resize((x2_oculos - x1_oculos, altura_oculos))
+	if detail == "left_eyebrow":
+		width_oculos = points[0][0]
+		height_oculos = min(points, key=lambda x: x[1])[1]
+	if detail == "right_eyebrow":
+		width2_oculos = points[-1][0]
+	if detail == "left_eye":
+		height_oculos = np.abs(height_oculos - max(points, key=lambda x: x[1])[1])
+	if detail == "nose_bridge":
+		x_pos_oculos = int(np.mean([x for (x,y) in points]))
+		y_pos_oculos = points[0][1]
+
+juju = juju.resize((int((width2_oculos - width_oculos)*1.2), int((height_oculos)*1.2)))
 foreground = juju
+width, height = juju.size
 
-new_fotinha.paste(juju, position, foreground)
+new_fotinha.paste(juju, (int(x_pos_oculos - width/2), int(y_pos_oculos*0.92)), foreground)
 
 now = datetime.now()
 current_time = now.strftime("%H:%M:%S")
