@@ -27,7 +27,7 @@ new_fotinha = Image.open(file_fotinha)
 for detail, points in face_landmarks_list[0].items():
     if detail == "left_eyebrow":
         x1_oculos = points[0][0]
-        position = (points[0][0]+3, points[0][1]-5)
+        position = (points[0][0], points[0][1])
         altura_oculos = min(points, key=lambda x: x[1])[1]
     if detail == "right_eyebrow":
         x2_oculos = points[-1][0]
