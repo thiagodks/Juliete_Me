@@ -10,4 +10,4 @@ OpenCv, Colored, PIL
 ```
 
 ![alt text](
-https://github.com/thiagodks/Juliete_Me/blob/master/geral_de_juju/eu_de_juju_21:05:16.png?raw=true "Saida")
+https://github.com/thiagodks/Juliete_Me/blob/master/geral_de_juju/eu_de_juju_13:24:44.png?raw=true "Saida")
